@@ -7,19 +7,19 @@ public class UI {
 
     public static void CLI(){
 
-        DataReader reader = new DataReader();
+        Reader reader = new Reader();
         Statistics statistics = new Statistics();
 
-        ArrayList<Language> languages = reader.readInLanguages();
+        ArrayList<Data> languages = reader.readInLanguages();
         Scanner input = new Scanner(System.in);
 
         boolean quit = false;
 
         while(!quit){
             System.out.println("\n");
-            System.out.println("-----------------");
+            System.out.println("----------------");
             System.out.println("Speech Analyzer");
-            System.out.println("-----------------");
+            System.out.println("----------------");
             System.out.println("1. Analyze Text");
             System.out.println("2. Exit");
 
@@ -30,7 +30,7 @@ public class UI {
                     System.out.print("Enter Your Sentence Here: ");
                     Scanner read = new Scanner(System.in, "ISO-8859-1");
                     String userInput = read.nextLine();
-                    Language inputLanguage = new Language(userInput);
+                    Data inputLanguage = new Data(userInput);
                     statistics.analyzeLanguage(inputLanguage, languages);
                     break;
                 case 2:
